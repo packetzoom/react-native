@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RCTBridgeModule.h"
 
-@interface RNPacketzoom : NSObject
+@interface RNPacketzoom : NSObject<RCTBridgeModule>
 
 @end

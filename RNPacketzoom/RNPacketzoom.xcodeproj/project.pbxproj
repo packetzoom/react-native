@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A1CEE1D1DD545D200AAF16E /* RNPacketzoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1CEE1C1DD545D200AAF16E /* RNPacketzoom.m */; };
 		5A1CEE1E1DD545D200AAF16E /* RNPacketzoom.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A1CEE1B1DD545D200AAF16E /* RNPacketzoom.h */; };
+		5A1CEE251DD54B0500AAF16E /* PZSpeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1CEE241DD54B0500AAF16E /* PZSpeed.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		5A1CEE181DD545D200AAF16E /* libRNPacketzoom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNPacketzoom.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1CEE1B1DD545D200AAF16E /* RNPacketzoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPacketzoom.h; sourceTree = "<group>"; };
 		5A1CEE1C1DD545D200AAF16E /* RNPacketzoom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPacketzoom.m; sourceTree = "<group>"; };
+		5A1CEE241DD54B0500AAF16E /* PZSpeed.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PZSpeed.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1CEE251DD54B0500AAF16E /* PZSpeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 		5A1CEE0F1DD545D200AAF16E = {
 			isa = PBXGroup;
 			children = (
+				5A1CEE241DD54B0500AAF16E /* PZSpeed.framework */,
 				5A1CEE1A1DD545D200AAF16E /* RNPacketzoom */,
 				5A1CEE191DD545D200AAF16E /* Products */,
 			);
@@ -221,6 +225,16 @@
 		5A1CEE221DD545D200AAF16E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../../node_modules/react-native/React/**",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -230,6 +244,16 @@
 		5A1CEE231DD545D200AAF16E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../../../node_modules/react-native/React/**",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
