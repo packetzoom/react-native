@@ -1,0 +1,35 @@
+{
+  "name": "react-native-packetzoom",
+  "version": "0.0.1",
+  "description": "Cell Network Signal Strength for React Native iOS and Android",
+  "main": "SignalStrength.js",
+  "scripts": {
+    "postinstall": "./post_install.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bexp/react-native-signal-strength.git"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "cell",
+    "network"
+  ],
+  "author": "Leanid Vouk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bexp/react-native-signal-strength/issues"
+  },
+  "homepage": "https://github.com/bexp/react-native-signal-strength#readme",
+  "devDependencies": {
+    "react-native": "*"
+  },
+  "peerDependencies": {
+    "react-native": "*"
+  },
+  "dependencies": {
+    "react-native": "^0.35.0"
+  }
+}
