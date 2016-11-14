@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.modules.network.OkHttpClientProvider;
+import com.facebook.react.bridge.ReactMethod;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -14,6 +15,7 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
 
 import com.packetzoom.speed.PacketZoomClient;
 import com.packetzoom.okhttp3.PacketZoomInterceptor;
@@ -29,14 +31,17 @@ public class RNPacketzoomModule extends ReactContextBaseJavaModule {
         super(reactContext);
         this.reactContext = reactContext;
 
-        PacketZoomClient.init(reactContext, "724ffaa4321fde726ce01c8138e324dc", "69fe84992a5242317d7235ce16c1b845090ec2d8");
-
         OkHttpClient client = OkHttpClientProvider.getOkHttpClient();
         OkHttpClient replacementClient = client
                 .newBuilder()
                 .addInterceptor(new PacketZoomInterceptor())
                 .build();
         OkHttpClientProvider.replaceOkHttpClient(replacementClient);
+    }
+
+    @ReactMethod
+    public void init(String appId, String apiKey) {
+        PacketZoomClient.init(reactContext, appId, apiKey);
     }
 
     @Override
@@ -48,8 +53,7 @@ public class RNPacketzoomModule extends ReactContextBaseJavaModule {
     public @Nullable Map<String, Object> getConstants() {
         HashMap<String, Object> constants = new HashMap<String, Object>();
 
-        constants.put("signal", "1");
-        constants.put("hello", "world");
+        constants.put("version", "1");
 
         return constants;
     }
