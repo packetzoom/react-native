@@ -2,6 +2,8 @@
 
 React Native PacketZoom SDK for iOS + Android
 
+![](http://i.imgur.com/GPEgdkT.png)
+
 # Installation
 
 First, download the library from npm:
@@ -23,8 +25,11 @@ will have smooth integration experience, it may require additional manual steps 
 
 import Packetzoom from 'react-native-packetzoom'
 
-Packetzoom.init('app-id', 'api-key')
+Packetzoom.init('packetzoom-app-id', 'packetzoom-api-key')
 ```
+
+You can sign up for free PacketZoom account here: https://packetzoom.com/get-started.html
+
 
 ## iOS
 
@@ -40,3 +45,5 @@ Make sure you linking against it in Build Phases -> Link Binary with Libraries s
 ## Android
 
 No additional changes required for Android
+
+## Enjoy request speedups and uninterrupted network connections across all mobile and wifi networks
