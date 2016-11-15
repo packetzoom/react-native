@@ -11,8 +11,6 @@ At PacketZoom we designed a modern, UDP-based network protocol with mobile apps 
 
 Today we're redefining how networking works for React Native apps, empowering them with PacketZoom SDK and our worldclass cluster of servers.
 
-[Join The Rebellion](https://packetzoom.com/get-started.html)
-
 # Installation
 
 First, download the library from npm:
@@ -58,4 +56,5 @@ Make sure you linking against it in Build Phases -> Link Binary with Libraries s
 
 No additional changes required for Android
 
-Enjoy request speedups and uninterrupted network connections across all mobile and wifi networks
+
+[Join The Rebellion](https://packetzoom.com/get-started.html) and experience request speedups and uninterrupted network connections across all mobile and wifi networks
