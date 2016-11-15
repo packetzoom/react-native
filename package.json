@@ -15,7 +15,11 @@
     "ios",
     "android",
     "cell",
-    "network"
+    "networking",
+    "http",
+    "network acceleration",
+    "packetzoom",
+    "no tcp"
   ],
   "author": "Leanid Vouk",
   "license": "MIT",
@@ -23,6 +27,7 @@
     "url": "https://github.com/packetzoom/react-native/issues"
   },
   "homepage": "https://github.com/packetzoom/react-native#readme",
+  "readmeFilename": "README.md",
   "devDependencies": {
     "react-native": "*"
   },
