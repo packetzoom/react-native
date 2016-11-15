@@ -1,13 +1,13 @@
 import { NativeModules } from 'react-native';
 
-const Packetzoom = NativeModules.RNPacketzoom;
+var pz = NativeModules.RNPacketzoom
 
 export default {
-  getVersion: function () {
-    return Packetzoom.version;
-  },
-  
-  init: function (appId, apiKey) {
-      Packetzoom.init(appId, apiKey);
-  }
+    getVersion: function() {
+        return pz.version
+    },
+    
+    init: function(appid, apikey) {
+        pz.init(appid, apikey)
+    }
 }
