@@ -15,8 +15,8 @@ add native dependencies automatically then continue the directions below dependi
 
    `$ react-native link`
    
-React Native versions from 0.30 should work out of the box however we cannot guarantee that earlier than 0.30
-will have smooth integration experience, it may require additional manual steps like `rnpm`  for example.
+React Native versions from 0.30 and above should work out of the box, we cannot guarantee that earlier than 0.30
+will have smooth integration experience, it may require additional manual steps like `rnpm` for example.
 
 ## iOS
 
