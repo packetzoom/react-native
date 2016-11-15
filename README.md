@@ -20,7 +20,7 @@ will have smooth integration experience, it may require additional manual steps 
 
 ## iOS
 
-
+<blockquote class="imgur-embed-pub" lang="en" data-id="z71C8Nh"><a href="//imgur.com/z71C8Nh"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## Javascript
 ```js
