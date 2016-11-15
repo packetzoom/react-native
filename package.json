@@ -2,7 +2,7 @@
   "name": "react-native-packetzoom",
   "version": "0.0.4",
   "description": "PacketZoom SDK for React Native",
-  "main": "Packetzoom.js",
+  "main": "index.js",
   "scripts": {
     "postinstall": "./post_install.sh"
   },

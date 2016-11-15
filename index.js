@@ -2,7 +2,7 @@ import { NativeModules } from 'react-native';
 
 const Packetzoom = NativeModules.RNPacketzoom;
 
-module.exports = {
+export default {
   getVersion: function () {
     return Packetzoom.version;
   },
@@ -10,4 +10,4 @@ module.exports = {
   init: function (appId, apiKey) {
       Packetzoom.init(appId, apiKey);
   }
-};
+}
