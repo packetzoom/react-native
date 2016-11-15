@@ -46,4 +46,4 @@ Make sure you linking against it in Build Phases -> Link Binary with Libraries s
 
 No additional changes required for Android
 
-## Enjoy request speedups and uninterrupted network connections across all mobile and wifi networks
+Enjoy request speedups and uninterrupted network connections across all mobile and wifi networks
