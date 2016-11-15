@@ -4,6 +4,13 @@ React Native PacketZoom SDK for iOS + Android
 
 ![](http://i.imgur.com/GPEgdkT.png)
 
+
+# Intro
+
+At PacketZoom we designed a modern, UDP-based network protocol with mobile apps in mind. This enables faster downloads, reduced latency, efficient and reliable data transfers between your app and the cloud. In addition to speed, one of the advantages of PacketZoom is that it handles seamless transition between networks without interrupting ongoing sessions. This is a unique advantage of the PacketZoom protocol over HTTP/TCP stack in common use today. 
+
+Today we're redefining how networking works for React Native apps empowering them with PacketZoom SDK and our worldwide cluster of servers.
+
 # Installation
 
 First, download the library from npm:
@@ -29,6 +36,9 @@ Packetzoom.init('packetzoom-app-id', 'packetzoom-api-key')
 ```
 
 You can sign up for free PacketZoom account here: https://packetzoom.com/get-started.html
+
+From now on all your [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) requests will be accelerated
+by PacketZoom. You can see all network analytics data on web dashboard when you login under your account.
 
 
 ## iOS
