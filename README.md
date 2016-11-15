@@ -14,7 +14,18 @@ Then you must install the native dependencies: You can use `rnpm` (now part of `
 add native dependencies automatically then continue the directions below depending on your target OS.
 
    `$ react-native link`
+   
+React Native versions from 0.30 should work out of the box however we cannot guarantee that earlier than 0.30
+will have smooth integration experience, it may require additional manual steps like `rnpm`  for example.
 
 ## iOS
 
 
+
+## Javascript
+```js
+
+import Packetzoom from 'react-native-packetzoom'
+
+Packetzoom.init('app-id', 'api-key')
+```
