@@ -18,12 +18,6 @@ add native dependencies automatically then continue the directions below dependi
 React Native versions from 0.30 and above should work out of the box, we cannot guarantee that earlier than 0.30
 will have smooth integration experience, it may require additional manual steps like `rnpm` for example.
 
-## iOS
-
-Drag PZSpeed.Framework from RNPacketZoom.xcodeproj to your app frameworks folder like shown bellow:
-
-![](http://i.imgur.com/z71C8Nh.png)
-
 ## Javascript
 ```js
 
@@ -31,3 +25,18 @@ import Packetzoom from 'react-native-packetzoom'
 
 Packetzoom.init('app-id', 'api-key')
 ```
+
+## iOS
+
+Drag PZSpeed.Framework from RNPacketZoom.xcodeproj to your app frameworks folder like shown bellow:
+
+![](http://i.imgur.com/z71C8Nh.png)
+
+
+Make sure you linking against it in Build Phases -> Link Binary with Libraries section
+
+![](http://i.imgur.com/e6ftLfX.png)
+
+## Android
+
+No additional changes required for Android
