@@ -52,6 +52,15 @@ Make sure you linking against it in Build Phases -> Link Binary with Libraries s
 
 ![](http://i.imgur.com/e6ftLfX.png)
 
+Also make sure that the following frameworks and libraries are part of your project: 
+
+CoreLocation.framework
+SystemConfiguration.framework
+CoreTelephony.framework
+Foundation.framework
+libz.tbd
+libc++.tbd
+
 ## Android
 
 No additional changes required for Android
