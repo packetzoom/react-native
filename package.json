@@ -35,6 +35,5 @@
     "react-native": "*"
   },
   "dependencies": {
-    "react-native": "^0.35.0"
   }
 }
