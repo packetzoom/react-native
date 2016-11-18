@@ -35,11 +35,11 @@ import Packetzoom from 'react-native-packetzoom'
 Packetzoom.init('packetzoom-app-id', 'packetzoom-api-key')
 ```
 
-You can sign up for free PacketZoom account here: https://packetzoom.com/get-started.html
+You can sign up for free PacketZoom account here: https://packetzoom.com/developers.html
 
-From now on all your [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) requests will be accelerated
+From now on all your [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or 
+[Axios](https://github.com/mzabriskie/axios) requests will be accelerated
 by PacketZoom. You can access all [network analytics](https://packetzoom.com/blog/introducing-http-optimizer-and-analytics-service.html) data on web dashboard when you login under your account.
-
 
 ## iOS
 
@@ -66,4 +66,4 @@ Also make sure that the following frameworks and libraries are part of your proj
 No additional changes required for Android
 
 
-[Join The Rebellion](https://packetzoom.com/get-started.html) and experience request speedups and uninterrupted network connections across all mobile and wifi networks
+[Join The Rebellion](https://packetzoom.com/developers.html) and experience request speedups and uninterrupted network connections across all mobile and wifi networks
