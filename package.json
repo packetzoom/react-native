@@ -19,7 +19,11 @@
     "http",
     "network acceleration",
     "packetzoom",
-    "no tcp"
+    "udp",
+    "fetch",
+    "axios",
+    "apisauce",
+    "ajax"
   ],
   "author": "Leanid Vouk",
   "license": "MIT",
