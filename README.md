@@ -1,5 +1,7 @@
 # react-native-packetzoom [![npm version](https://img.shields.io/npm/v/react-native-packetzoom.svg?style=flat)](https://www.npmjs.com/package/react-native-packetzoom)
 
+# Accelerate your react native app performance without rewriting networking code
+
 React Native PacketZoom SDK for iOS + Android
 
 ![](http://i.imgur.com/GPEgdkT.png)
@@ -37,8 +39,8 @@ Packetzoom.init('packetzoom-app-id', 'packetzoom-api-key')
 
 You can sign up for free PacketZoom account here: https://packetzoom.com/developers.html
 
-From now on all your [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or 
-[Axios](https://github.com/mzabriskie/axios) requests will be accelerated
+From now on all your [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API),
+[Axios](https://github.com/mzabriskie/axios) or [Apisauce](https://github.com/skellock/apisauce) requests will be accelerated
 by PacketZoom. You can access all [network analytics](https://packetzoom.com/blog/introducing-http-optimizer-and-analytics-service.html) data on web dashboard when you login under your account.
 
 ## iOS
