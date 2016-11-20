@@ -1,7 +1,7 @@
 {
   "name": "react-native-packetzoom",
   "version": "0.1.5",
-  "description": "PacketZoom SDK for React Native",
+  "description": "PacketZoom sdk for React Native",
   "main": "index.js",
   "scripts": {
     "postinstall": "./post_install.sh"
@@ -23,7 +23,8 @@
     "fetch",
     "axios",
     "apisauce",
-    "ajax"
+    "ajax",
+    "frisbee'
   ],
   "author": "Leanid Vouk",
   "license": "MIT",
