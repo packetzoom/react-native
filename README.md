@@ -11,7 +11,7 @@ React Native PacketZoom sdk for iOS + Android
 
 At __PacketZoom__ we designed a modern, UDP-based network protocol with mobile apps in mind. This enables faster downloads, reduced latency, efficient and reliable data transfers between your app and the cloud. In addition to speed, one of the advantages of PacketZoom is that it handles seamless transition between networks without interrupting ongoing sessions. This is a unique advantage of the PacketZoom protocol over HTTP/TCP stack in common use today. 
 
-Today we're redefining how networking works for React Native apps, empowering them with PacketZoom sdk and our [worldclass cluster of servers](http://status.packetzoom.com).
+Today we're redefining how networking works for React Native apps, empowering them with __PacketZoom__ sdk and our [worldclass cluster of servers](http://status.packetzoom.com).
 
 # Installation
 
