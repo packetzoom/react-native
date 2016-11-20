@@ -2,7 +2,7 @@
 
 # Accelerate your react native app performance without rewriting networking code
 
-React Native PacketZoom SDK for iOS + Android
+React Native PacketZoom sdk for iOS + Android
 
 ![](http://i.imgur.com/GPEgdkT.png)
 
