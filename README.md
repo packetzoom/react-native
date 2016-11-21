@@ -68,8 +68,8 @@ Packetzoom.init('packetzoom-app-id', 'packetzoom-api-key')
 
 You can sign up for free __PacketZoom__ account here: https://packetzoom.com/developers.html to get your credentials.
 
-The XMLHttpRequest API is built in to React Native. This means that you can use third party libraries such as Frisbee, [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or [Axios](https://github.com/mzabriskie/axios) that depend on it. Ultimately XMLHttpRequest API is implemented using native [NSURLSession API](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/UsingNSURLSession.html#//apple_ref/doc/uid/TP40013509-SW1) on iOS side and [OkHttp3](https://github.com/square/okhttp) on Android
-where PacketZoom SDK would intercept them.
+The XMLHttpRequest API is built in to React Native. This means that you can use third party libraries such as [Frisbee](https://github.com/crocodilejs/frisbee), [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or [Axios](https://github.com/mzabriskie/axios) that depend on it. Ultimately XMLHttpRequest API is implemented using native [NSURLSession API](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/UsingNSURLSession.html#//apple_ref/doc/uid/TP40013509-SW1) on iOS side and [OkHttp3](https://github.com/square/okhttp) on Android
+where PacketZoom native sdk would eventually intercept them.
 
 From now on all your [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API),
 [Axios](https://github.com/mzabriskie/axios) or [Apisauce](https://github.com/skellock/apisauce) requests will be accelerated
