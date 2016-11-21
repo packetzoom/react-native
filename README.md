@@ -1,6 +1,6 @@
 # react-native-packetzoom [![npm version](https://img.shields.io/npm/v/react-native-packetzoom.svg?style=flat)](https://www.npmjs.com/package/react-native-packetzoom)
 
-# Accelerate your react native app performance without rewriting networking code
+# Redefining Networking For React Native
 
 React Native PacketZoom SDK for iOS + Android
 
