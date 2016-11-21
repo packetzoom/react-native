@@ -2,16 +2,45 @@
 
 # Accelerate your react native app performance without rewriting networking code
 
-React Native PacketZoom sdk for iOS + Android
+React Native PacketZoom SDK for iOS + Android
 
 ![](http://i.imgur.com/GPEgdkT.png)
 
 
 # Intro
 
-At __PacketZoom__ we designed a modern, UDP-based network protocol with mobile apps in mind. This enables faster downloads, reduced latency, efficient and reliable data transfers between your app and the cloud. In addition to speed, one of the advantages of PacketZoom is that it handles seamless transition between networks without interrupting ongoing sessions. This is a unique advantage of the PacketZoom protocol over HTTP/TCP stack in common use today. 
+At __PacketZoom__ we designed from the groud up modern UDP-based network protocol with mobile apps in mind. This enables faster downloads, reduced latency, efficient and reliable data transfers between your app and the cloud. In addition to speed, one of the advantages of PacketZoom is that it handles seamless transition between networks without interrupting ongoing sessions. This is a unique advantage of the PacketZoom protocol over HTTP/TCP stack in common use today. 
 
 Today we're redefining how networking works for React Native apps, empowering them with __PacketZoom__ sdk and our [worldclass cluster of servers](http://status.packetzoom.com).
+
+# How
+
+Following diagram shows overhead of establishing TLS/SSL connection over TCP socket on relatively fast wifi. The advantage of __PacketZoom__ is that we have zero roundtrips to establish connection with our EDGE servers, small amount of data like API call is fetched from PZ server within single roundtrip.
+ 
+[![unnamed.png](https://s16.postimg.org/gx0dgrgut/unnamed.png)](https://postimg.org/image/ajbadibyp/)
+
+Now consider more complex real world scenario. To give you some perspective of how much time it takes make an API call to your endpoint in AWS US East (N. Virginia) location from customer located in India on mobile network here some raw numbers
+
+
+| Tables         | 3g            | 4g        |
+| -------------- |--------------:| ---------:|
+| Control plane  | 200–2,500 ms  | 50–100 ms |
+| DNS lookup     | 200 ms        |    100 ms |
+| TCP handshake  | 200 ms        |    100 ms |
+| TLS handshake  | 200 - 4000 ms |100 - 200 ms |
+| HTTP request   | 200 ms        |    100 ms |
+| Total latency overhead  | 200–3500 ms   | 100–600 ms|
+
+[Control plane](https://en.wikipedia.org/wiki/Control_plane) latency: Fixed, one-time latency cost incurred for [RRC](https://en.wikipedia.org/wiki/Radio_Resource_Control) negotiation and state transitions: <100 ms for idle to active, and <50 ms for dormant to active. 
+
+To understand how just few seconds can affect your customers experience here is great excerpt from Ilya Grigorik book [High Performance Browser Networking](http://chimera.labs.oreilly.com/books/1230000000545/index.html)
+
+*We are not accustomed to measuring our everyday encounters in milliseconds, but studies have shown that most of us will reliably report perceptible "lag" once a delay of over 100–200 milliseconds is introduced into the system. Once the 300 millisecond delay threshold is exceeded, the interaction is often reported as "sluggish," and at the 1,000 milliseconds (1 second) barrier, many users have already performed a mental context switch while waiting for the response*
+
+There is a whole chapter (7th) dedicated to mobile networks. The book states that the problem with high performance is almost always tied to latency, we usually have plenty of bandwidth but the protocols gets in the way. Be it [TCP slow start](https://en.wikipedia.org/wiki/TCP_congestion-avoidance_algorithm#Slow_start), the [Radio Resource Controller](https://en.wikipedia.org/wiki/Radio_Resource_Control) (RRC) or suboptimal configurations. If you are experiencing poor latency only in mobile networks it's the way they are designed.
+
+Another piece by PacketZoom CTO/co-founder Chetan Ahuja on [faster approach to DNS lookups]
+(http://www.infoworld.com/article/3133104/mobile-technology/why-your-mobile-connection-is-so-slow.html) which used in our stack.
 
 # Installation
 
@@ -30,11 +59,6 @@ React Native versions from 0.30 and above should work out of the box, we cannot 
 will have smooth integration experience, it may require additional manual steps like `rnpm` for example.
 
 ## Javascript
-
-Sign up for free __PacketZoom__ account here: https://packetzoom.com/developers.html to get credentials for your app.
-
-Add these two lines of code where you initialize your main component
-
 ```js
 
 import Packetzoom from 'react-native-packetzoom'
@@ -42,8 +66,10 @@ import Packetzoom from 'react-native-packetzoom'
 Packetzoom.init('packetzoom-app-id', 'packetzoom-api-key')
 ```
 
-As you may already know the XMLHttpRequest API is built in to React Native. This means that you can use third party libraries such as [Frisbee](https://github.com/crocodilejs/frisbee), [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or [Axios](https://github.com/mzabriskie/axios) that depend on it. Ultimately XMLHttpRequest API is implemented using native [NSURLSession API](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/UsingNSURLSession.html#//apple_ref/doc/uid/TP40013509-SW1) on iOS side and [OkHttp3](https://github.com/square/okhttp) on Android
-where PacketZoom SDK will eventually intercept them.
+You can sign up for free __PacketZoom__ account here: https://packetzoom.com/developers.html to get your credentials.
+
+The XMLHttpRequest API is built in to React Native. This means that you can use third party libraries such as Frisbee, [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or [Axios](https://github.com/mzabriskie/axios) that depend on it. Ultimately XMLHttpRequest API is implemented using native [NSURLSession API](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/UsingNSURLSession.html#//apple_ref/doc/uid/TP40013509-SW1) on iOS side and [OkHttp3](https://github.com/square/okhttp) on Android
+where PacketZoom SDK would intercept them.
 
 From now on all your [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API),
 [Axios](https://github.com/mzabriskie/axios) or [Apisauce](https://github.com/skellock/apisauce) requests will be accelerated
@@ -73,5 +99,14 @@ Also make sure that the following frameworks and libraries are part of your proj
 
 No additional changes required for Android
 
+
+##Who uses PacketZoom
+
+![](https://packetzoom.com/images/customers/glu-logo.svg)
+![](https://s16.postimg.org/kgmyiwtd1/houzify.png)
+![](https://s11.postimg.org/tgpt2cw7n/News_Republic.png)
+</br>
+![](https://s13.postimg.org/y8h5jaxyb/Screen_Shot_2016_11_20_at_10_10_41_PM.png)
+![](https://s21.postimg.org/b0kis6gav/wooplr.png)
 
 [Join The Rebellion](https://packetzoom.com/developers.html) and experience request speedups and uninterrupted network connections across all mobile and wifi networks
