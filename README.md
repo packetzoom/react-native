@@ -9,7 +9,7 @@ React Native PacketZoom SDK for iOS + Android
 
 # Intro
 
-At __PacketZoom__ we designed from the groud up modern UDP-based network protocol with mobile apps in mind. This enables faster downloads, reduced latency, efficient and reliable data transfers between your app and the cloud. In addition to speed, one of the advantages of PacketZoom is that it handles seamless transition between networks without interrupting ongoing sessions. This is a unique advantage of the PacketZoom protocol over HTTP/TCP stack in common use today. 
+At __PacketZoom__ we designed from the groud up modern UDP-based network protocol with mobile apps in mind. This enables faster downloads, reduced latency, efficient and reliable data transfers between your app and the cloud. In addition to speed, one of the advantages of PacketZoom is that it handles seamless transition between networks without interrupting ongoing sessions. This is a unique advantage of the PacketZoom protocol over HTTP/TCP stack is already in production use with many apps. 
 
 Today we're redefining how networking works for React Native apps, empowering them with __PacketZoom__ sdk and our [worldclass cluster of servers](http://status.packetzoom.com).
 
@@ -29,9 +29,9 @@ Now consider more complex real world scenario. To give you some perspective of h
 | TCP handshake  | 200 ms        |    100 ms |
 | TLS handshake  | 200 - 4000 ms |100 - 200 ms |
 | HTTP request   | 200 ms        |    100 ms |
-| Total latency overhead  | 200–3500 ms   | 100–600 ms|
+| __Total latency overhead__  | 200–3500 ms   | 100–600 ms|
 
-[Control plane](https://en.wikipedia.org/wiki/Control_plane) latency: Fixed, one-time latency cost incurred for [RRC](https://en.wikipedia.org/wiki/Radio_Resource_Control) negotiation and state transitions: <100 ms for idle to active, and <50 ms for dormant to active. 
+Where [Control plane](https://en.wikipedia.org/wiki/Control_plane) latency: Fixed, one-time latency cost incurred for [RRC](https://en.wikipedia.org/wiki/Radio_Resource_Control) negotiation and state transitions: <100 ms for idle to active, and <50 ms for dormant to active. 
 
 To understand how just few seconds can affect your customers experience here is great excerpt from Ilya Grigorik book [High Performance Browser Networking](http://chimera.labs.oreilly.com/books/1230000000545/index.html)
 
