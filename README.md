@@ -9,13 +9,13 @@ React Native PacketZoom SDK for iOS + Android
 
 # Intro
 
-At __PacketZoom__ we designed from the groud up modern UDP-based network protocol with mobile apps in mind. This enables faster downloads, reduced latency, efficient and reliable data transfers between your app and the cloud. In addition to speed, one of the advantages of PacketZoom is that it handles seamless transition between networks without interrupting ongoing sessions. This is a unique advantage of the PacketZoom protocol over HTTP/TCP stack is already in production use with many apps. 
+At __PacketZoom__ we designed from the ground up modern UDP-based network protocol with mobile apps in mind. This enables faster downloads, reduced latency, efficient and reliable data transfers between your app and the cloud. In addition to speed, one of the advantages of PacketZoom is that it handles seamless transition between networks without interrupting ongoing sessions. This is a unique advantage of the PacketZoom protocol over HTTP/TCP stack is already in production use with many mobile apps. 
 
 Today we're redefining how networking works for React Native apps, empowering them with __PacketZoom__ sdk and our [worldclass cluster of servers](http://status.packetzoom.com).
 
 # How
 
-Following diagram shows overhead of establishing TLS/SSL connection over TCP socket on relatively fast wifi. The advantage of __PacketZoom__ is that we have zero roundtrips to establish connection with our EDGE servers, small amount of data like API call is fetched from PZ server within single roundtrip.
+Following diagram shows overhead of establishing TLS/SSL connection over TCP socket on relatively fast wifi. The advantage of __PacketZoom__ is that we have zero roundtrips to establish connection with our EDGE servers, small amount of data like API call is fetched from PZ server within single roundtrip as oppose to traditional multi-roundtrip TLS/SSL over TCP flow
  
 [![unnamed.png](https://s16.postimg.org/gx0dgrgut/unnamed.png)](https://postimg.org/image/ajbadibyp/)
 
@@ -31,15 +31,22 @@ Now consider more complex real world scenario. To give you some perspective of h
 | HTTP request   | 200 ms        |    100 ms |
 | __Total latency overhead__  | 200–3500 ms   | 100–600 ms|
 
+Thats a whole lot of time user have to wait for completing just single API call, she might already switched to another app
+or decided to check Facebook feed while waiting for your app to respond.
+
 Where [Control plane](https://en.wikipedia.org/wiki/Control_plane) latency: Fixed, one-time latency cost incurred for [RRC](https://en.wikipedia.org/wiki/Radio_Resource_Control) negotiation and state transitions: <100 ms for idle to active, and <50 ms for dormant to active. 
 
 To understand how just few seconds can affect your customers experience here is great excerpt from Ilya Grigorik book [High Performance Browser Networking](http://chimera.labs.oreilly.com/books/1230000000545/index.html)
 
 *We are not accustomed to measuring our everyday encounters in milliseconds, but studies have shown that most of us will reliably report perceptible "lag" once a delay of over 100–200 milliseconds is introduced into the system. Once the 300 millisecond delay threshold is exceeded, the interaction is often reported as "sluggish," and at the 1,000 milliseconds (1 second) barrier, many users have already performed a mental context switch while waiting for the response*
 
+Not convinced yet ?
+
 There is a whole chapter (7th) dedicated to mobile networks. The book states that the problem with high performance is almost always tied to latency, we usually have plenty of bandwidth but the protocols gets in the way. Be it [TCP slow start](https://en.wikipedia.org/wiki/TCP_congestion-avoidance_algorithm#Slow_start), the [Radio Resource Controller](https://en.wikipedia.org/wiki/Radio_Resource_Control) (RRC) or suboptimal configurations. If you are experiencing poor latency only in mobile networks it's the way they are designed.
 
-Another piece by PacketZoom CTO/co-founder Chetan Ahuja on [faster approach to DNS lookups]
+Besides eliminating legacy handshakes and DNS lookups PZ stack uses custom congestion control algorithms tailored for specific network types which makes data delivery faster than TCP with it's slow start, Tahoe, Reno, CuBiC or whatever else one-size-fits-all approach.
+
+Here is another piece by PacketZoom CTO/co-founder Chetan Ahuja on [faster approach to DNS lookups]
 (http://www.infoworld.com/article/3133104/mobile-technology/why-your-mobile-connection-is-so-slow.html) which used in our stack.
 
 # Installation
@@ -73,7 +80,7 @@ where PacketZoom native sdk would eventually intercept them.
 
 From now on all your [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API),
 [Axios](https://github.com/mzabriskie/axios) or [Apisauce](https://github.com/skellock/apisauce) requests will be accelerated
-by __PacketZoom__. You can access all [network analytics](https://packetzoom.com/blog/introducing-http-optimizer-and-analytics-service.html) data on web dashboard when you login under your account.
+by __PacketZoom__. You can access all NewRelic'sque kind of [network analytics](https://packetzoom.com/blog/introducing-http-optimizer-and-analytics-service.html) data on web dashboard when you login under your account.
 
 ## iOS
 
