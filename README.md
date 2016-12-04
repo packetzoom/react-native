@@ -46,6 +46,10 @@ There is a whole chapter (7th) dedicated to mobile networks. The book states tha
 
 Besides eliminating legacy handshakes and DNS lookups PZ stack uses custom congestion control algorithms tailored for specific network types which makes data delivery faster than TCP with it's slow start, Tahoe, Reno, CuBiC or whatever else one-size-fits-all approach.
 
+PacketZoom treats the actual mobile device as the destination for data packets, compared to legacy protocols that use only the device's IP address.
+
+Treating the device itself as a unique destination allows PacketZoom to easily handle the intermittent nature of mobile connections in an intelligent, fault-tolerant way. So as your device moves across networks, any ongoing transfers can continue seamlessly something that is simply impossible with old-fashioned legacy protocols.
+
 Here is another piece by PacketZoom CTO/co-founder Chetan Ahuja on [faster approach to DNS lookups]
 (http://www.infoworld.com/article/3133104/mobile-technology/why-your-mobile-connection-is-so-slow.html) which used in our stack.
 
