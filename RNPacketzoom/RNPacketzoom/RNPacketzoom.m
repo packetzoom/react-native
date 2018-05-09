@@ -21,7 +21,7 @@ RCT_EXPORT_MODULE()
 
 - (id) init {
     self = [super init];
-    
+
     return self;
 }
 
@@ -39,8 +39,13 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(init:(NSString *)appId apiKey:(NSString *)apiKey)
 {
     NSLog(@"RNPacketzoom init version = %ld",  [PZSpeedController version]);
-   
+
     [PZSpeedController controllerWithAppID: appId apiKey: apiKey];
+}
+
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
 }
 
 @end
