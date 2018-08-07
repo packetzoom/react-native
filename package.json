@@ -1,6 +1,6 @@
 {
   "name": "react-native-packetzoom",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "PacketZoom sdk for React Native",
   "main": "index.js",
   "scripts": {
