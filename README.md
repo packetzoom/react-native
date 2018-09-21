@@ -111,7 +111,7 @@ Also make sure that the following frameworks and libraries are part of your proj
 No additional changes required for Android
 
 
-##Who uses PacketZoom
+## Who uses PacketZoom
 
 ![](https://packetzoom.com/images/customers/glu-logo.svg)
 ![](https://s16.postimg.org/kgmyiwtd1/houzify.png)
